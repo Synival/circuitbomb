@@ -3,6 +3,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <time.h>
 
 #include <sys/time.h>
 #include <sys/types.h>
@@ -667,32 +668,13 @@ int get_single_char (void)
 #endif
 }
 
-int main (int argc, char **argv)
+int game_loop (void)
 {
    int i, key, quit, switch_num, force_break, key_wait_secs, key_wait_usecs;
    gate_type *g;
 
-   /* seed our random functions. */
-   srandom (time (NULL));
-
-   // enable non-blocking mode.
-   terminal_set_nonblocking (STDIN_FILENO, 1);
-
-   printf ("\x1b[2J\x1b[1;1H"
-           "-------------------------------------------------------\n"
-           "| Circuit Bomb Test                                   |\n"
-           "|    written, directed, and produced by Simon Bielman |\n"
-           "|    Copyrite (c) 2015 Baroque Creations, LLC         |\n"
-           "-------------------------------------------------------\n\n");
-   printf ("Make sure the window is big - 80x50 should do the trick.\n"
-           "To learn how to play, check out 'README.txt'.\n\n"
-           "Press any key to start!\n");
-   get_single_char ();
-
-   /* initialize our game state. */
-   game_state_init (&g_state, 1, 60);
+   /* run until 'quit' is set. */
    quit = 0;
-
    while (!quit) {
       /* print all of our gates. */
       printf ("\x1b[2J\x1b[1;1H\x1b[37;1;42m");
@@ -844,6 +826,31 @@ int main (int argc, char **argv)
          key_wait_secs = 1;
       }
    }
+   return 1;
+}
+
+int main (int argc, char **argv)
+{
+   /* seed our random functions. */
+   srandom (time (NULL));
+
+   // enable non-blocking mode.
+   terminal_set_nonblocking (STDIN_FILENO, 1);
+
+   printf ("\x1b[2J\x1b[1;1H"
+           "-------------------------------------------------------\n"
+           "| Circuit Bomb Test                                   |\n"
+           "|    written, directed, and produced by Simon Bielman |\n"
+           "|    Copyrite (c) 2015 Baroque Creations, LLC         |\n"
+           "-------------------------------------------------------\n\n");
+   printf ("Make sure the window is big - 80x50 should do the trick.\n"
+           "To learn how to play, check out 'README.txt'.\n\n"
+           "Press any key to start!\n");
+   get_single_char ();
+
+   /* initialize our game state. */
+   game_state_init (&g_state, 1, 60);
+   game_loop ();
 
    /* reset our terminal. */
    terminal_set_nonblocking (STDIN_FILENO, 0);

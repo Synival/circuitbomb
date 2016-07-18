@@ -1,0 +1,27 @@
+@font-face {
+   font-family: EightBit;
+   src: url('font.ttf');
+}
+
+body {
+   font-size: 24pt;
+   background: #024;
+}
+
+* {
+   font-family: EightBit;
+   font-size:   inherit;
+   font-smooth: never;
+   webkit-font-smoothing: none;
+   line-height: 75%;
+}
+
+#game_canvas {
+   position:   absolute;
+   margin:     auto;
+   width:      77%;
+   height:     100%;
+   top:        0;
+   left:       0;
+   background: #789;
+}

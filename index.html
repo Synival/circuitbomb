@@ -1,0 +1,71 @@
+<html>
+   <head>
+      <title>Circuit Bomb</title>
+      <link rel="stylesheet" href="style.css" />
+   </head>
+   <body>
+      <div id="body">
+         <canvas id="game_canvas"></div>
+
+         <script src="defs.js"></script>
+
+         <script src="circuits.js"></script>
+         <script src="events.js"></script>
+         <script src="frames.js"></script>
+         <script src="gates.js"></script>
+         <script src="resize.js"></script>
+         <script src="switches.js"></script>
+         <script src="timers.js"></script>
+         <script src="utils.js"></script>
+
+         <script src="main.js"></script>
+      </div>
+      <div id="instructions" style="position: absolute; top:0; right:0; color:#fff; padding: 16px; pointer-events:none;width:20%">
+         <h1 style="font-size: 150%">Circuit Bomb!</h1>
+         <p>Can you disable the circuit?  Find the right combination of switches!</p>
+         <p>Click the <font color="red">Red</font> and <font color="green">Green</font> circles to turn them on and off.</p>
+
+         <div style="font-size: 75%">
+         <div style="clear:both;position:relative">
+            <img src="and.png" style="float: left" />
+            <div style="position:absolute;top:20%;left:64px">
+               <font style="font-size:125%">AND Gate</font>:<br>
+               Output turns <font color="green">Green</font> when both
+               inputs are <font color="green">Green</font>.
+            </div>
+         </div>
+         <div style="clear:both;position:relative">
+            <img src="or.png" style="float: left" />
+            <div style="position:absolute;top:35%;left:64px">
+               <font style="font-size:125%">OR Gate</font>:<br>
+               Output turns <font color="red">Red</font> when both
+               inputs are <font color="red">Red</font>.
+            </div>
+         </div>
+         <div style="clear:both;position:relative">
+            <img src="nand.png" style="float: left" />
+            <div style="position:absolute;top:50%;left:64px">
+               <font style="font-size:125%">NAND Gate</font>:<br>
+               Output turns <font color="red">Red</font> when both
+               inputs are <font color="green">Green</font>.
+            </div>
+         </div>
+         <div style="clear:both;position:relative">
+            <img src="nor.png" style="float: left" />
+            <div style="position:absolute;top:65%;left:64px">
+               <font style="font-size:125%">NOR Gate</font>:<br>
+               Output turns <font color="green">Green</font> when both
+               inputs are <font color="red">Red</font>.
+            </div>
+         </div>
+         <div style="clear:both;position:relative">
+            <img src="invert.png" style="float: left" />
+            <div style="position:absolute;top:80%;left:64px">
+               <font style="font-size:125%">INVERT Gate</font>:<br>
+               Inverts <font color="red">Red</font>/<font color="green">Green</font> signals.
+            </div>
+         </div>
+         </div>
+      </div>
+   </body>
+</html>
