@@ -10,21 +10,6 @@ function resizeUpdate () {
    divGameCanvas.width  = screenWidth;
    divGameCanvas.height = screenHeight;
 
-/*
-   // determine translation coordinates.
-   if (screenWidth >= screenHeight) {
-      transX = screenWidth  / 2;
-      transY = screenHeight / 2;
-   }
-   else {
-      transX = screenWidth  / 2;
-      transY = screenHeight / 2;
-   }
-
-   divGameContext.translate (transX, transY);
-*/
-
-   // perform a redraw.
    frameRedraw ();
    frameDraw ();
 }

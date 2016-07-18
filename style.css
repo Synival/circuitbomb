@@ -4,7 +4,7 @@
 }
 
 body {
-   font-size: 24pt;
+   font-size: 2vw;
    background: #024;
 }
 
@@ -24,4 +24,18 @@ body {
    top:        0;
    left:       0;
    background: #789;
+}
+
+img {
+   width: 3.5vw;
+}
+
+#instructions {
+   position: absolute;
+   top:0;
+   right:0;
+   color:#fff;
+   padding: 1vw;
+   pointer-events:none;
+   width:20%;
 }
