@@ -1,5 +1,7 @@
 # circuitbomb
 
+[Play at simonbielman.com](http://simonbielman.com/circuitbomb)
+
 *A BOMB IS ABOUT TO GO OFF!*
 
 Disable the bomb's circuitry before you're exploded into exploedy bits!
